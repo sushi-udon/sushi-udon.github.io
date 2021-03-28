@@ -4,24 +4,20 @@
     <div class="layout__main reviewCarousel">
       <h2 class="reviewCarousel__title">Our Reviews</h2>
       <div class="background">
-        <div
-          class="block"
-          v-for="m in members"
-          :key="m.number"
-          :class="{ isActive: '-none' }"
-        >
+        <div class="block">
           <figure class="reviewCarousel__image">
-            <img :src="m.imageFilePath" alt="">
+            <img :src="members[num].imageFilePath" alt="">
           </figure>
           <div class="reviewCarousel__profile">
-            <h3 class="name">{{ m.firstName }}{{ m.lastName }}</h3>
-            <p class="position">{{ m.position }}</p>
-            <p class="text">{{ m.text }}</p>
+            <h3 class="name">{{ members[num].firstName }}{{ members[num].lastName }}</h3>
+            <p class="position">{{ members[num].position }}</p>
+            <p class="text">{{ members[num].text }}</p>
           </div>
           <div class="reviewCarousel__button">
             <span class="arrow -left" @click="goPrev()">&lt;</span>
             <span class="arrow -right" @click="goNext()">&gt;</span>
           </div>
+          {{ this.num + 1 }}
         </div>
       </div>
     </div>
@@ -41,16 +37,26 @@ import OurData from '@/json/ReviewCarousel/members.json';
 
 export default class ReviewCarousel extends Vue {
   private members = OurData;
-  private isActive = false;
+  private num = 0;
 
   // 「<」をクリックしたときに、前の情報を表示させる
   private goPrev() {
-    this.isActive = true;
+    // 今見ている情報が「最初」だったとき
+    if (this.num === 0) {
+      return this.num = this.members.length - 1;
+    } else {
+      return this.num = this.num -1;
+    }
   }
 
   // 「＞」をクリックしたときに、次の情報を表示させる
   private goNext() {
-    this.isActive = false;
+    // 今見ている情報が「最後」だったとき
+    if (this.num === this.members.length - 1) {
+      return this.num = 0;
+    } else {
+      return this.num = this.num + 1;
+    }
   }
 }
 </script>
@@ -84,18 +90,16 @@ export default class ReviewCarousel extends Vue {
     border-radius: .8rem;
     box-shadow: 0 0 .6rem rgba(#CCC, 10);
     padding: 1.6rem;
-
-    > .block.-none {
-      display: none;
-    }
   }
 
   &__image {
     width: 8rem;
+    height: 10rem;
     margin: 0 auto 1rem;
   }
 
   &__profile {
+    min-height: 10rem;
     text-align: center;
     margin-bottom: 2.4rem;
 
