@@ -7,7 +7,7 @@
     <nav class="navigation">
       <h3 class="navigation__title">Menu</h3>
       <ul>
-        <li class="navigation__list"><a href="color-flipper" class="link">ColorFlipper</a></li>
+        <li class="navigation__list"><a href="#color-flipper" class="link">ColorFlipper</a></li>
       </ul>
     </nav>
   </header>

@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Index from '../components/pages/Index.vue';
-import ColorFlipper from '../components/pages/ColorFlipper.vue';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import Index from '@/components/pages/Index.vue';
+import ColorFlipper from '@/components/pages/ColorFlipper.vue';
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', name: 'Index', component: Index },
@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes
 });
 
