@@ -1,7 +1,7 @@
 <template>
   <header class="globalHeader">
     <h1 class="globalHeader__title">
-      <a href="/">Kageko's Portfolio</a>
+      <a href="/">つれづれ</a>
     </h1>
 
     <nav class="navigation">
@@ -9,6 +9,7 @@
       <ul>
         <li class="navigation__list"><a href="#color-flipper" class="link">ColorFlipper</a></li>
         <li class="navigation__list"><a href="#counter" class="link">Counter</a></li>
+        <li class="navigation__list"><a href="#review-carousel" class="link">ReviewCarousel</a></li>
       </ul>
     </nav>
   </header>
@@ -17,15 +18,7 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 
-@Options({
-  props: {
-    msg: String
-  }
-})
-
-export default class HelloWorld extends Vue {
-  msg!: string
-}
+export default class GlobalHeader extends Vue {}
 </script>
 
 <style lang="scss" scoped>

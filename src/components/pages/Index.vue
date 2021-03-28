@@ -29,6 +29,6 @@ export default class Index extends Vue {}
 }
 
 .globalHeader {
-  max-width: 30%;
+  width: 25%;
 }
 </style>
