@@ -56,7 +56,7 @@ export default class ColorFlipper extends Vue {
 }
 
 .globalHeader {
-  width: 30%;
+  max-width: 30%;
 }
 
 .colorFlipper {
