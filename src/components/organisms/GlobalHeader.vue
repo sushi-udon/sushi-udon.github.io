@@ -30,12 +30,16 @@ export default class HelloWorld extends Vue {
 <style lang="scss" scoped>
 .globalHeader {
   height: 100vh;
-  box-shadow: .5rem 0 1rem rgba(#888, 10);
   padding: 1.6rem;
+  border-right: .1rem solid #000;
 
   &__title {
     font-size: 1.8rem;
     margin-bottom: 2.4rem;
+
+    &:hover {
+      opacity: .6;
+    }
   }
 
   .navigation {

@@ -19,10 +19,16 @@ export default class Index extends Vue {}
 
 <style lang="scss" scoped>
 .layout {
+  width: 100%;
   display: flex;
 
   &__main {
-
+    width: 75%;
+    padding: 2.4rem 3.6rem 0;
   }
+}
+
+.globalHeader {
+  width: 30%;
 }
 </style>
