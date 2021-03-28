@@ -1,0 +1,23 @@
+[
+  {
+    "imageFilePath": "/img/reviewCarousel/01.png",
+    "firstName": "やまだ",
+    "lastName": "はなこ",
+    "position": "小学生",
+    "text": "わたし、はなこ。しゅみはソリあそび。しょうらいのゆめは、さんたくろーす。"
+  },
+  {
+    "imageFilePath": "/img/reviewCarousel/02.png",
+    "firstName": "山田",
+    "lastName": "双子",
+    "position": "中学生",
+    "text": "私、山田双子（ふたこ）と申します。最近の趣味は「じゃまーず」というあいどるぐるーぷの写真を見ることです。"
+  },
+  {
+    "imageFilePath": "/img/reviewCarousel/03.png",
+    "firstName": "山田",
+    "lastName": "ビューティフルシティガール",
+    "position": "高校生",
+    "text": "My name is Beautiful city girl Yamada! (山田美都子です)"
+  }
+]

@@ -24,7 +24,7 @@ import GlobalHeader from '@/components/organisms/GlobalHeader.vue';
   },
 })
 
-export default class ColorFlipper extends Vue {
+export default class Counter extends Vue {
   private counterNumber = 0;
 
   // counterNumber の数を1つ減らす
@@ -60,7 +60,8 @@ export default class ColorFlipper extends Vue {
 }
 
 .globalHeader {
-  max-width: 30%;
+  width: 25%;
+  height: 100vh;
 }
 
 .counter {
