@@ -8,6 +8,7 @@
       <h3 class="navigation__title">Menu</h3>
       <ul>
         <li class="navigation__list"><a href="#color-flipper" class="link">ColorFlipper</a></li>
+        <li class="navigation__list"><a href="#counter" class="link">Counter</a></li>
       </ul>
     </nav>
   </header>
