@@ -61,6 +61,7 @@ export default class Counter extends Vue {
 
 .globalHeader {
   width: 25%;
+  height: 100vh;
 }
 
 .counter {

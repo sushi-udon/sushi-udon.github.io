@@ -30,5 +30,6 @@ export default class Index extends Vue {}
 
 .globalHeader {
   width: 25%;
+  height: 100vh;
 }
 </style>

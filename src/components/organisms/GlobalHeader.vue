@@ -23,7 +23,6 @@ export default class GlobalHeader extends Vue {}
 
 <style lang="scss" scoped>
 .globalHeader {
-  height: 100vh;
   padding: 1.6rem;
   border-right: .1rem solid #000;
 

@@ -1,18 +1,28 @@
 <template>
   <div class="layout">
     <GlobalHeader />
-    <div class="layout__main"
-      :style="{backgroundColor: this.colorValue}"
-    >
-      <div class="colorFlipperBlock">
-        <h2 class="colorFlipperBlock__title">
-          background color
-          <span class="colorValue">{{ this.colorValue }}</span>
-        </h2>
-      </div>
-
-      <div class="colorFlipperEditButton" @click="getBackgroundColor()">
-        <span class="colorFlipperEditButton__contents">CLICK ME</span>
+    <div class="layout__main reviewCarousel">
+      <h2 class="reviewCarousel__title">Our Reviews</h2>
+      <div class="background">
+        <div
+          class="block"
+          v-for="m in members"
+          :key="m.number"
+          :class="{ isActive: '-none' }"
+        >
+          <figure class="reviewCarousel__image">
+            <img :src="m.imageFilePath" alt="">
+          </figure>
+          <div class="reviewCarousel__profile">
+            <h3 class="name">{{ m.firstName }}{{ m.lastName }}</h3>
+            <p class="position">{{ m.position }}</p>
+            <p class="text">{{ m.text }}</p>
+          </div>
+          <div class="reviewCarousel__button">
+            <span class="arrow -left" @click="goPrev()">&lt;</span>
+            <span class="arrow -right" @click="goNext()">&gt;</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -21,6 +31,7 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import GlobalHeader from '@/components/organisms/GlobalHeader.vue';
+import OurData from '@/json/ReviewCarousel/members.json';
 
 @Options({
   components: {
@@ -29,6 +40,18 @@ import GlobalHeader from '@/components/organisms/GlobalHeader.vue';
 })
 
 export default class ReviewCarousel extends Vue {
+  private members = OurData;
+  private isActive = false;
+
+  // 「<」をクリックしたときに、前の情報を表示させる
+  private goPrev() {
+    this.isActive = true;
+  }
+
+  // 「＞」をクリックしたときに、次の情報を表示させる
+  private goNext() {
+    this.isActive = false;
+  }
 }
 </script>
 
@@ -40,48 +63,76 @@ export default class ReviewCarousel extends Vue {
   &__main {
     width: 75%;
     padding: 2.4rem 3.6rem 0;
+    background: rgba(#2AAB9F, .5);
   }
 }
 
 .globalHeader {
   width: 25%;
+  height: 100vh;
 }
 
-.colorFlipper {
-  &Block {
-    background: #333;
-    border-radius: 3rem;
-    margin: 0 auto 2.4rem;
-    padding: 3rem;
-    box-shadow: 0 0 1rem rgba(#888, 10);
+.reviewCarousel {
+  &__title {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 2.4rem;
+  }
 
-    &__title {
-      color: white;
-      font-size: 1.6rem;
+  > .background {
+    background: #FFF;
+    border-radius: .8rem;
+    box-shadow: 0 0 .6rem rgba(#CCC, 10);
+    padding: 1.6rem;
 
-      > .colorValue:before {
-        content: ':';
-        margin: 0 1rem;
-      }
+    > .block.-none {
+      display: none;
     }
   }
 
-  &EditButton {
-    width: fit-content;
-    margin: 0 auto;
-    padding: .8rem 1.6rem;
-    border: .1rem solid #000;
-    border-radius: .8rem;
-    cursor: pointer;
+  &__image {
+    width: 8rem;
+    margin: 0 auto 1rem;
+  }
 
-    &:hover {
-      opacity: .6;
-      transition: .3s ease;
+  &__profile {
+    text-align: center;
+    margin-bottom: 2.4rem;
+
+    > .name {
+      font-size: 1.6rem;
+      margin-bottom: .8rem;
     }
 
-    &__contents {
+    > .position {
+      color: #2AAB9F;
+      font-size: 1.2rem;
+      margin-bottom: 1.4rem;
+    }
+
+    > .text {
+      font-size: 1.4rem;
+      line-height: 1.7;
+    }
+  }
+
+  &__button {
+    color: #2AAB9F;
+    text-align: center;
+
+    > .arrow {
       font-size: 1.2rem;
       font-weight: bold;
+      display: inline-block;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .6;
+      }
+
+      &.-left {
+        margin-right: 1rem;
+      }
     }
   }
 }
