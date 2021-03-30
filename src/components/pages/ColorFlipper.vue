@@ -46,18 +46,17 @@ export default class ColorFlipper extends Vue {
 
 <style lang="scss" scoped>
 .layout {
-  width: 100%;
   display: flex;
 
+  .globalHeader {
+    width: 30rem;
+    height: 100vh;
+  }
+
   &__main {
-    width: 75%;
+    width: 100%;
     padding: 2.4rem 3.6rem 0;
   }
-}
-
-.globalHeader {
-  width: 25%;
-  height: 100vh;
 }
 
 .colorFlipper {

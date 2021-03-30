@@ -10,13 +10,14 @@
         <li class="navigation__list"><a href="#color-flipper" class="link">ColorFlipper</a></li>
         <li class="navigation__list"><a href="#counter" class="link">Counter</a></li>
         <li class="navigation__list"><a href="#review-carousel" class="link">ReviewCarousel</a></li>
+        <li class="navigation__list"><a href="#responsive-navbar" class="link">Responsive Navbar</a></li>
       </ul>
     </nav>
   </header>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+import { Vue } from 'vue-class-component';
 
 export default class GlobalHeader extends Vue {}
 </script>
