@@ -1,6 +1,9 @@
 <template>
   <div class="layout">
     <GlobalHeader />
+    <div class="layout__main main">
+      <p>作成中</p>
+    </div>
   </div>
 </template>
 
